@@ -52,7 +52,7 @@ int to_print_pointer(va_list types, char b[],
 		wid, flag, pad, xtra_c, pad_stat));
 }
 
-/**** FOR PRINTING NON PRINTABLE *******/
+/**** FOR PRINTING NON PRINTABLE *****/
 /**
  * to_print_non_printable - Prints ascii codes in hexa of non printable chars
  * @types: Lista of arguments
@@ -135,7 +135,7 @@ int to_print_reverse(va_list types, char b[],
 	}
 	return (count);
 }
-/** FOR PRINTING A STRING IN ROT13 ********************/
+/**** FOR PRINTING A STRING IN ROT13 ****/
 /**
  * to_print_rot13 - Print a string in rot13.
  * @types: Lista of arguments
@@ -169,7 +169,7 @@ int to_print_rot13(va_list types, char b[],
 	{
 		for (j = 0; get[j]; j++)
 		{
-			if (in[j] == str[i])
+			if (get[j] == str[i])
 			{
 				x = out[j];
 				write(1, &x, 1);

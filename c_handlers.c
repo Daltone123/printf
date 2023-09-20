@@ -95,9 +95,9 @@ int to_write_num(int index, char b[],
 {
 	int i, pad_stat = 1;
 
-	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0' && wid == 0)
+	if (prec == 0 && index == BUFF_SIZE - 2 && b[index] == '0' && wid == 0)
 		return (0);
-	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
+	if (prec == 0 && index == BUFF_SIZE - 2 && b[index] == '0')
 		b[index] = pad = ' ';
 	if (prec > 0 && prec < length)
 		pad = ' ';
