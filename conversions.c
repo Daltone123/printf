@@ -17,7 +17,7 @@ int to_print_unsigned(va_list types, char b[],
 	int i = BUFF_SIZE - 2;
 	unsigned long int number = va_arg(types, unsigned long int);
 
-	number = convert_size_unsgnd(number, size);
+	number = to_convert_size_unsgnd(number, size);
 
 	if (number == 0)
 		b[i--] = '0';
@@ -91,7 +91,7 @@ int to_print_octal(va_list types, char b[],
 int to_print_hexadecimal(va_list types, char b[],
 	int flag, int wid, int prec, int size)
 {
-	return (to_print_hexa(types, "0123456789abcdef", b,
+	return (to_print_hexa_l(types, "0123456789abcdef", b,
 		flag, 'x', wid, prec, size));
 }
 
@@ -110,8 +110,8 @@ int to_print_hexadecimal(va_list types, char b[],
 int to_print_hexa_u(va_list types, char b[],
 	int flag, int wid, int prec, int size)
 {
-	return (to_print_hexa(types, "0123456789ABCDEF", b,
-		flag, 'X', wid, prec, size));
+	return (to_print_hexa_u(types, b,
+		flag, wid, prec, size));
 }
 
 /************** FOR PRINTING HEXX NUM IN LOWER OR UPPER **************/

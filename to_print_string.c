@@ -85,7 +85,7 @@ int to_print_string(va_list types, char b[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int to_rint_percent(va_list types, char b[],
+int to_print_percent(va_list types, char b[],
 	int flag, int wid, int prec, int size)
 {
 	UNUSED(types);
@@ -116,7 +116,7 @@ int to_print_int(va_list types, char b[],
 	long int n = va_arg(types, long int);
 	unsigned long int number;
 
-	n = convert_size_number(n, size);
+	n = to_convert_size_number(n, size);
 
 	if (n == 0)
 		b[i--] = '0';
@@ -153,7 +153,7 @@ int to_print_int(va_list types, char b[],
  * Return: Numbers of char printed.
  */
 int to_print_binary(va_list types, char b[],
-	int flag, int wid, int prec, int size);
+	int flag, int wid, int prec, int size)
 {
 	unsigned int n, m, i, sum;
 	unsigned int a[32];
